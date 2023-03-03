@@ -7,7 +7,7 @@ return (
   <>
 <Navbar title="Title here" />
 <div className="container my-3">
-<TextForm heading = "Enter text to analyse"/>
+<TextForm heading = "Enter text: "/>
 </div>
 </>
 );}
