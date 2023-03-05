@@ -36,15 +36,15 @@ const[text, setText] = useState('');
         <div className="  mb-3">
         <textarea className="form-control" placeholder='Enter text here: ' value = {text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
         </div> 
-        <button className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>Convert to Upppercase</button>
-        <button className="btn btn-primary mx-2 my-2" onClick={handleLoClick}>Convert to Lowercase</button>
-        <button className="btn btn-primary mx-2 my-2" onClick={handleClrClick}>Clear text</button>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>Convert to Upppercase</button>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleLoClick}>Convert to Lowercase</button>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleClrClick}>Clear text</button>
 
   </div>
   <div className="container">
     <h1 className='my-3'>Your Text Summary: </h1>
-    <p> {text.split(" ").length} words & {text.length} characters. </p>
-    <p> {0.008 * text.split(" ").length} Minutes to read. </p>
+    <p> {text.split(" ").filter((element)=>{return element.length !==0}).length} words & {text.length} characters. </p>
+    <p> {0.008 * text.split(" ").filter((element)=>{return element.length !==0}).length} Minutes to read. </p>
     <h2>Preview: </h2>
     <p>{text}</p>
   </div>

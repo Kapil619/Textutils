@@ -26,7 +26,7 @@ function App() {
 return (
   <>
 <Router>
-<Navbar title="Title here" /* mode={mode} */ />
+<Navbar title="TextUtils" /* mode={mode} */ />
 {/* <Alert alert= {alert} /> */}
 <div className="container my-3">
   <Switch>
